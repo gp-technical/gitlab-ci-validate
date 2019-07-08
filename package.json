@@ -1,5 +1,5 @@
 {
-  "name": "gitlab-ci-validate",
+  "name": "@gp-technical/gitlab-ci-validate",
   "version": "0.2.0",
   "description": "Checks if your .gitlab-ci.yml file is valid.",
   "main": "src/index.js",
@@ -7,16 +7,11 @@
     "gitlab-ci-validate": "./src/bin"
   },
   "scripts": {
+    "build": "echo 'ok'",
     "lint": "eslint src",
     "prettier": "prettier --write \"src/*\" \"README.md\"",
     "test": "npm run lint",
     "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "files": [
     "src"
@@ -27,7 +22,10 @@
     "gitlab-ci",
     "validate"
   ],
-  "repository": "https://github.com/pradel/gitlab-ci-validate.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gp-technical/gitlab-ci-validate"
+  },
   "author": "Pradel Léo <pradel.leo@gmail.com>",
   "license": "MIT",
   "prettier": {
@@ -44,7 +42,10 @@
     "eslint-plugin-react": "^7.13.0",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
-    "prettier": "^1.17.1"
+    "prettier": "^1.17.1",
+    "@gp-technical/eslint-config-stack": "^1.0.0",
+    "@gp-technical/stack-pack-app": "^2.0.2",
+    "@gp-technical/stack-pack-standard": "^3.0.0"
   },
   "dependencies": {
     "kleur": "^3.0.3",
